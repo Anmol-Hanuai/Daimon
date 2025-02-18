@@ -1,0 +1,58 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-light-grey: #f6f6f6;
+  --bg-dark: #131313;
+  --bg-dark-grey: #13131376;
+  --light-grey: #E1EACD;
+  --text-primary: #131313;
+  --text-primary-light: #131313a6;
+  --text-secondary: #ffffff;
+  --text-medium-grey: #595959;
+  --text-light-grey: #f6f6f6cc;
+  --text-light-white: #f6f6f6a6;
+  --success-light: #C2FFC7;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger-light: #ffcccb;
+  --danger: #dc3545;
+  --border: #ede8dc;
+  --light-shadow: #939185;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  /* max-width: 1800px; */
+  margin: auto;
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+  scrollbar-width: thin;
+  overflow: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.padding-horizontal {
+  padding: 0 7rem;
+}

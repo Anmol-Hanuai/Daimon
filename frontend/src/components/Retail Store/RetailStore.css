@@ -1,0 +1,112 @@
+.retail-store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .content2 {
+    display: flex;
+    flex-direction: column;
+    width: 45%; /* Reduced width to give more space to image */
+    padding-right: 30px;
+  }
+  
+  .heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px; /* Reduced spacing */
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    line-height: 1.2;
+  }
+  
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap for more compact layout */
+  }
+  
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 3px 0; /* Reduced padding */
+  }
+  
+  .icon {
+    font-size: 20px; /* Smaller icon */
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px; /* Smaller size */
+    min-height: 40px; /* Smaller size */
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+  }
+  
+  .text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px 0; /* Reduced margin */
+    color: #222;
+  }
+  
+  .text p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    line-height: 1.4; /* Slightly reduced */
+  }
+  
+  .image-container {
+    width: 52%; /* Increased width for larger image */
+  }
+  
+  .image-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .retail-store {
+      padding: 40px 60px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .retail-store {
+      flex-direction: column;
+      padding: 30px 25px;
+    }
+  
+    .content2 {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 25px;
+    }
+  
+    .image-container {
+      width: 100%;
+    }
+    
+    .heading {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .features {
+      gap: 12px;
+    }
+  }
+  
+  

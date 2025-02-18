@@ -1,0 +1,92 @@
+/* General styles */
+.workflow-container {
+    background-color: #ffc107;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .workflow-header h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  .workflow-header p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  /* Workflow steps layout */
+  .workflow-steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  
+  .workflow-step {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    position: relative;
+  }
+  
+  .workflow-step-number {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .workflow-step h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .workflow-step p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .workflow-step-timing {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .workflow-steps {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .workflow-step {
+      max-width: 100%;
+    }
+  }
+  

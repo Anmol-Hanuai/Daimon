@@ -1,0 +1,60 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px; /* Fixed navbar height */
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  flex: 1; /* Takes up available space on the left */
+  display: flex;
+  align-items: center; /* Center the logo vertically */
+}
+
+.logo-image {
+  height: 110px; /* Adjusted logo size */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo scales properly */
+}
+
+.navbar-links {
+  flex: 2; /* Takes up more space to push links to the right */
+  display: flex;
+  justify-content: flex-end; /* Aligns links to the right */
+}
+
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li {
+  margin: 0 15px;
+}
+
+.navbar-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  transition: color 0.3s;
+}
+
+.navbar-links ul li a:hover {
+  color: #00bcd4;
+}
+
+ 
+  
+  
+  
+  
