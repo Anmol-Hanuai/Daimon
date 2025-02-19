@@ -1,81 +1,164 @@
 .about-section {
-    padding: 60px 20px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  padding: 60px 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  margin-top: 10px;
+}
+
+.about-quote {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text ul li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.about-text ul li::before {
+  /* content: "🚀"; */
+  margin-right: 10px;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  margin-top: 100px;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
   .about-container {
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: flex-start;
+    gap: 30px; /* Reduce gap between text and image */
   }
-  
+
   .about-text {
-    flex: 1;
-    max-width: 600px;
+    max-width: 500px; /* Adjust max-width for smaller screens */
   }
-  
-  .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-    position: relative;
-  }
-  
-  .about-text h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #007bff;
-    margin-top: 10px;
-  }
-  
-  .about-quote {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .about-text p {
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .about-text ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  
-  .about-text ul li {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    color: #555;
-  }
-  
-  .about-text ul li::before {
-    /* content: "🚀"; */
-    margin-right: 10px;
-  }
-  
+
   .about-image {
-    flex: 1;
-    max-width: 500px;
+    max-width: 450px; /* Adjust image size */
   }
-  
+
   .about-image img {
-    width: 100%;
-    margin-top: 100px;
-    height: 500px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    height: 450px; /* Adjust image height */
+    margin-top: 80px; /* Reduce margin-top */
   }
-  
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    padding: 40px 20px; /* Reduce padding */
+  }
+
+  .about-container {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center; /* Center align items */
+    gap: 20px; /* Reduce gap */
+  }
+
+  .about-text {
+    max-width: 100%; /* Full width for text */
+    text-align: center; /* Center align text */
+  }
+
+  .about-text h2::after {
+    margin: 10px auto; /* Center the underline */
+  }
+
+  .about-image {
+    max-width: 100%; /* Full width for image */
+    margin-top: 0; /* Remove margin-top */
+  }
+
+  .about-image img {
+    height: auto; /* Auto height for image */
+    margin-top: 0; /* Remove margin-top */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text h2 {
+    font-size: 2rem; /* Reduce heading font size */
+  }
+
+  .about-text p,
+  .about-text ul li {
+    font-size: 1rem; /* Reduce font size for text and list items */
+  }
+
+  .about-image img {
+    height: 350px; /* Adjust image height */
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: 30px 15px; /* Further reduce padding */
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem; /* Further reduce heading font size */
+  }
+
+  .about-text p,
+  .about-text ul li {
+    font-size: 0.95rem; /* Further reduce font size */
+  }
+
+  .about-image img {
+    height: 300px; /* Adjust image height for mobile */
+  }
+}

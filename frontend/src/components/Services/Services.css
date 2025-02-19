@@ -3,23 +3,24 @@
   font-family: "Poppins", sans-serif;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 20px;
+  padding: clamp(15px, 3vw, 20px);
   position: relative;
+  box-sizing: border-box;
 }
 
 /* Main Heading */
 .main-heading {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
   color: #1d3557;
-  margin-bottom: 15px;
+  margin-bottom: clamp(10px, 2vw, 15px);
 }
 
 /* Intro */
 .intro {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: #457b9d;
-  margin-bottom: 35px;
+  margin-bottom: clamp(20px, 4vw, 35px);
   line-height: 1.8;
 }
 
@@ -28,26 +29,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
-  margin-bottom: 40px;
-  position: relative; /* Add this to make arrows position relative to content */
+  gap: clamp(20px, 5vw, 50px);
+  margin-bottom: clamp(25px, 5vw, 40px);
+  position: relative;
+  flex-direction: row;
+  padding: 0 30px; /* Add padding to make space for arrows */
 }
 
 /* Image Section */
 .image-section {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .image {
+  width: 100%;
   width: 420px;
-  height: 360px;
-  border: 6px solid #1d3557;
+  height: auto;
+  aspect-ratio: 420/360;
+  border: clamp(3px, 0.6vw, 6px) solid #1d3557;
   border-radius: 12%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
 }
 
 .image:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
   box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.25);
 }
 
@@ -58,14 +66,14 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   color: #1d3557;
-  margin-bottom: 12px;
+  margin-bottom: clamp(8px, 1.5vw, 12px);
 }
 
 .description, .examples {
-  font-size: 1.1rem;
-  line-height: 1.9;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.7;
   color: #6c757d;
 }
 
@@ -73,13 +81,13 @@
 .circle-navigation {
   display: flex;
   justify-content: center;
-  gap: 22px;
-  margin-top: 20px;
+  gap: clamp(12px, 2vw, 22px);
+  margin-top: clamp(15px, 3vw, 20px);
 }
 
 .circle {
-  width: 14px;
-  height: 14px;
+  width: clamp(10px, 1.2vw, 14px);
+  height: clamp(10px, 1.2vw, 14px);
   border-radius: 50%;
   background: linear-gradient(45deg, #a8dadc, #457b9d);
   border: 2px solid #1d3557;
@@ -101,34 +109,242 @@
 
 /* Arrow Navigation */
 .arrow {
-  width: 50px;
-  height: 50px;
+  width: clamp(40px, 5vw, 50px);
+  height: clamp(40px, 5vw, 50px);
   background: #1d3557;
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 24px);
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
-  position: absolute; /* Position arrows absolutely */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for exact centering */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .arrow:hover {
   background: #457b9d;
-  transform: translateY(-50%) scale(1.2); /* Maintain vertical centering while scaling */
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* Left and Right Arrow Specific Positions */
+/* Left and Right Arrow Specific Positions - keeping your original positioning */
 .arrow.left {
-  left: -60px; /* Adjust as needed */
+  left: -60px;
 }
 
 .arrow.right {
-  right: -60px; /* Adjust as needed */
+  right: -60px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 90%;
+  }
+  
+  .content {
+    padding: 0 40px;
+  }
+  
+  .arrow.left {
+    left: -20px;
+  }
+  
+  .arrow.right {
+    right: -20px;
+  }
+
+  .image{
+    width: 350px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 50px; /* Keep padding for arrow space */
+    position: relative;
+  }
+  
+  .image-section, .text-section {
+    flex: none;
+    width: 100%;
+  }
+  
+  /* Keep arrows on the sides */
+  .arrow {
+    top: 25%; /* Position near the middle of the image */
+    transform: translateY(-50%);
+  }
+  
+  .arrow.left {
+    left: 0px;
+  }
+  
+  .arrow.right {
+    right: 0px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+    margin-bottom: 80px; /* Extra space for arrows below */
+  }
+  
+  .image-section, .text-section {
+    flex: none;
+    width: 100%;
+  }
+  
+  .image {
+    width: 350px;
+  }
+  
+  /* Reposition arrows below on mobile */
+  .arrow {
+    top: 25%; /* Position near the middle of the image */
+    transform: translateY(-50%);
+  }
+  
+  .arrow.left {
+    left: 0px;
+  }
+  
+  .arrow.right {
+    right: 0px;
+  }
+  
+  .arrow:hover {
+    transform: scale(1.1);
+  }
+  
+  
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+    margin-bottom: 80px; /* Extra space for arrows below */
+  }
+  
+  .image-section, .text-section {
+    flex: none;
+    width: 100%;
+  }
+  
+  .image {
+    max-width: 350px;
+    height:300px
+  }
+  
+  /* Reposition arrows below on mobile */
+  .arrow {
+    top: 25%; /* Position near the middle of the image */
+    transform: translateY(-50%);
+  }
+  
+  .arrow.left {
+    left: 0px;
+  }
+  
+  .arrow.right {
+    right: 0px;
+  }
+  
+  .arrow:hover {
+    transform: scale(1.1);
+  }
+  
+  
+}
+@media (max-width: 576px) {
+  .main-heading {
+    text-align: center;
+  }
+  
+  .intro {
+    text-align: center;
+  }
+  
+  .image {
+    width: 280px;
+    border-width: 4px;
+  }
+  
+  .content {
+    padding: 0 25px; /* Reduce padding to give more space */
+  }
+  
+  .arrow {
+    width: 30px; /* Make arrows smaller */
+    height: 30px; 
+    font-size: 14px;
+    opacity: 0.8; /* Slightly transparent */
+  }
+  
+  .arrow.left {
+    left: -10px; /* Position slightly outside content area */
+  }
+  
+  .arrow.right {
+    right: -10px; /* Position slightly outside content area */
+  }
+}
+
+@media (max-width: 460px) {
+  /* Add new breakpoint specifically for very small screens */
+  .content {
+    padding: 0 20px;
+  }
+  
+  .arrow {
+    width: 28px;
+    height: 28px;
+    background-color: rgba(29, 53, 87, 0.7); /* More transparent background */
+  }
+  
+  .arrow.left {
+    left: -5px;
+  }
+  
+  .arrow.right {
+    right: -5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .image {
+    width: 240px;
+    border-width: 3px;
+  }
+  
+  .title {
+    text-align: center;
+  }
+  
+  .description, .examples {
+    text-align: center;
+  }
+  
+  /* Adjust arrows to be partially over the image but still visible */
+  .arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
 }
 
 

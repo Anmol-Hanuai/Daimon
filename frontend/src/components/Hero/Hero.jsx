@@ -18,15 +18,15 @@ const Hero = () => {
                     loop={true}
                     cursor
                     cursorStyle="|"
-                    typeSpeed={130}
+                    typeSpeed={100}
                     deleteSpeed={90}
                     delaySpeed={1000}
                   />
                 </span>
               </div>
             </div>
-            <h5>
-            Daimon delivers advanced AI-driven solutions in data annotation, document parsing,<br/> computer vision, and predictive analysis to help businesses streamline workflows,<br/> enhance accuracy, and make data-driven decisions with confidence.
+            <h5 className='desc'>
+            Daimon delivers advanced AI-driven solutions in data annotation, document parsing, computer vision, and predictive analysis to help businesses streamline workflows, enhance accuracy, and make data-driven decisions with confidence.
             </h5>
           </div>
         </div>
